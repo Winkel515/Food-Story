@@ -11,8 +11,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100); /* Makes height work better for mobile view */
+    height:100%;
     width: 100%;
     position: absolute;
     -moz-opacity: 37%;
