@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "utils/base.html" %}
 
 {% block head %}
     {{ super() }}
@@ -6,10 +6,6 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='styles/navbar.css') }}"
     />
-{% endblock %}
-
-{% block title %}
-    Main Page
 {% endblock %}
 
 {% block body %}
