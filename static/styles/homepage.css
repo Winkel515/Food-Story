@@ -6,6 +6,27 @@
     text-align: center;
 }
 
+.background {
+    background-image: url("../img/sushi.JPG");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    opacity: 37%;
+    z-index: 0;
+}
+
+.bg-black {
+    background: rgba(0,0,0,.98);
+    height: 100vh;
+    width: 100%;
+    z-index: 1;
+    top:0;
+    left:0;
+}
+
 .foodStory {
     letter-spacing: 17px;
 }

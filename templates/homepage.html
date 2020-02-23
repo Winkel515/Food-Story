@@ -9,11 +9,15 @@
 {% endblock %}
 
 {% block body %}
-    {{ super() }}
-    <div class="center">
-        <h1 class="foodStory">FOOD STORY</h1>
-        <hr/>
-        <p class="tale">The tale of an avid food lover</p>
-        <button class="explore btn btn-outline-secondary">EXPLORE</button>
+    <div class="background"></div>
+    <div class="bg-black">
+        {{ super() }}
+        <div class="center">
+            <h1 class="foodStory">FOOD STORY</h1>
+            <hr/>
+            <p class="tale">The tale of an avid food lover</p>
+            <button class="explore btn btn-outline-secondary">EXPLORE</button>
+        </div>
     </div>
+
 {% endblock %}
