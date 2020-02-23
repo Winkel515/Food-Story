@@ -1,0 +1,53 @@
+.center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.foodStory {
+    letter-spacing: 17px;
+}
+
+.tale {
+    padding-top: 10px;
+    letter-spacing: 3px;
+}
+
+.explore {
+    position: relative;
+}
+
+hr {
+    border: 1.5px solid white;
+    border-radius: 100px;
+    width: 75px;
+}
+
+.btn-outline-secondary {
+    color: white;
+    border-color: white;
+    width: 140px;
+    height: 45px;
+    margin-top: 15px;
+    transition: all .3s;
+    letter-spacing: 3px;
+}
+
+.btn-outline-secondary:hover {
+    color: white;
+    border-color: white;
+    background-color: rgba(108, 117, 125, 0.4);
+    transition: all .3s;
+    width: 154px;
+    height: 50px;
+    margin-top: 10px;
+    letter-spacing: 5px;
+}
+
+.btn-outline-secondary:not(:disabled):not(.disabled):active {
+    background-color: rgba(0,0,0, 0.4);
+    border-color: white;
+    transition: 0.1s;
+}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/navbar.css') }}"
+    />
+{% endblock %}
+
+{% block title %}
+    Main Page
+{% endblock %}
+
+{% block body %}
+    <div class="background"></div>
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <button class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item ml-auto">
+                    <a href="#" class="nav-link">HOME</a>
+                </li>
+                <li class="nav-item ml-auto">
+                    <a href="#" class="nav-link">CONTENTS</a>
+                </li>
+                <li class="nav-item ml-auto">
+                    <a href="#" class="nav-link">GALLERY</a>
+                </li>
+                <li class="nav-item ml-auto">
+                    <a href="#" class="nav-link">SURPRISE</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+{% endblock %}
