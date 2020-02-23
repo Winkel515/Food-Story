@@ -1,0 +1,35 @@
+{% extends "./utils/navbar.html" %}
+
+{% block head %}
+    {{ super() }}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/content.css') }}"
+    />
+{% endblock %}
+
+{% block title %}Content{% endblock %}
+
+{% block body %}
+    <div class="bg-black">
+        {{ super() }}
+        <h1 class="mainHeader"><span class="mainHeaderText">CONTENTS</span></h1>
+        <div class="foodColumn">
+            <div class="food" id="bibimbap">
+                <h3 class="center foodText">KOREA - BIBIMBAP</h3>
+            </div>
+            <div class="food" id="bibimbap">
+                <h3 class="center foodText">KOREA - BIBIMBAP</h3>
+            </div>
+            <div class="food" id="bibimbap">
+                <h3 class="center foodText">KOREA - BIBIMBAP</h3>
+            </div>
+            <div class="food" id="bibimbap">
+                <h3 class="center foodText">KOREA - BIBIMBAP</h3>
+            </div>
+            <div class="food" id="bibimbap">
+                <h3 class="center foodText">KOREA - BIBIMBAP</h3>
+            </div>
+        </div>
+    </div>
+{% endblock %}

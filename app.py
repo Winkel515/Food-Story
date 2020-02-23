@@ -7,5 +7,9 @@ app = Flask(__name__)
 def mainpage():
     return render_template('homepage.html')
 
+@app.route('/content')
+def content():
+    return render_template('content.html')
+
 if __name__ == '__main__':
     app.run()

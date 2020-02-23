@@ -29,23 +29,59 @@
     left:0;
 }
 
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-300px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 .foodStory {
     letter-spacing: 17px;
+    animation: 1s ease-out slideInFromLeft;
 }
 
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(300px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
 .tale {
     padding-top: 10px;
     letter-spacing: 3px;
+    animation: 1s ease-out slideInFromRight;
 }
 
+@keyframes slideInFromBottom{
+    0% {
+        transform: translateY(150px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 .explore {
     position: relative;
+    animation: 1s ease-out slideInFromBottom;
 }
 
+@keyframes appear{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 hr {
     border: 1.5px solid white;
     border-radius: 100px;
     width: 75px;
+    animation: 1s ease-out appear;
 }
 
 .btn-outline-secondary {

@@ -1,0 +1,78 @@
+.bg-black {
+    background: rgba(0,0,0,.98);
+    min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    min-height: calc(var(--vh, 1vh) * 100); /* Makes height work better for mobile view */
+    width: 100%;
+    z-index: 1;
+    top:0;
+    left:0;
+}
+
+.center {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.mainHeader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.mainHeader:before {
+    background: white;
+    height: 4px;
+    flex: 1;
+    content: '';
+}
+
+.mainHeader:after {
+    background: white;
+    height: 4px;
+    flex: 1;
+    content: '';
+}
+
+.mainHeaderText {
+    margin: 0 15px;
+}
+
+.foodColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.food {
+    position: relative;
+    height: 200px;
+    margin-bottom: 50px;
+}
+
+.food:last-child {
+    margin-bottom: 0;
+}
+
+.food:before {
+    content: ' ';
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    z-index: 1;
+    opacity: 0.35;
+    background-image: url("https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.foodText {
+    z-index: 2;
+}
+
+#bibimbap {
+    background-position-y: -300px;
+}
