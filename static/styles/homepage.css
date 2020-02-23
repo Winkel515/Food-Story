@@ -11,10 +11,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
-    width: 100vw;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
     position: absolute;
-    opacity: 37%;
     -moz-opacity: 37%;
     -webkit-filter: opacity(37%);
     z-index: 0;
@@ -22,7 +22,8 @@
 
 .bg-black {
     background: rgba(0,0,0,.98);
-    height: 100vh;
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
     width: 100%;
     z-index: 1;
     top:0;
