@@ -15,6 +15,8 @@
     width: 100vw;
     position: absolute;
     opacity: 37%;
+    -moz-opacity: 37%;
+    -webkit-filter: opacity(37%);
     z-index: 0;
 }
 
