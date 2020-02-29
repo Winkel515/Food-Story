@@ -20,16 +20,6 @@
     z-index: 0;
 }
 
-.bg-black {
-    background: rgba(0,0,0,.98);
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100); /* Makes height work better for mobile view */
-    width: 100%;
-    z-index: 1;
-    top:0;
-    left:0;
-}
-
 @keyframes slideInFromLeft {
     0% {
         transform: translateX(-300px);

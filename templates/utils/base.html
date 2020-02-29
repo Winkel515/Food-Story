@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        .bg-color {
+        background: rgba(0,0,0,.98);
+        min-height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        min-height: calc(var(--vh, 1vh) * 100); /* Makes height work better for mobile view */
+        width: 100%;
+        z-index: 1;
+        top:0;
+        left:0;
+}
+    </style>
 {% block head %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +23,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 {% endblock %}
 </head>
-<body>
-{% block body %}
-{% endblock %}
+<body class="bg-color">
+    {% block body %}
+    {% endblock %}
 </body>
 </html>

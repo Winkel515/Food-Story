@@ -11,5 +11,9 @@ def mainpage():
 def content():
     return render_template('content.html')
 
+@app.route('/bibimbap')
+def food():
+    return render_template('food/bibimbap.html')
+
 if __name__ == '__main__':
     app.run()

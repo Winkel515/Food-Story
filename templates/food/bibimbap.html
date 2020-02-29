@@ -1,0 +1,22 @@
+{% extends "utils/food.html" %}
+
+{% block title %}Bibimbap{% endblock %}
+
+{% block foodName %}BIBIMBAP{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/food/bibimbap.css') }}"
+    />
+{% endblock %}
+
+{% block description %}{{ super() }}{% endblock %}
+
+{% block foodImages %}
+    <img class="item1 fit" src="https://i.pinimg.com/originals/64/5f/d4/645fd42dd8306d91a9c6043f013869db.jpg ">
+    <img class="item2 fit" src="../../static/img/sidedish.JPG"/>
+    <img class="item3 fit" src="https://images.unsplash.com/photo-1498654896293-37aacf113fd9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
+    <img class="item4 fit" src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"/>
+{% endblock %}

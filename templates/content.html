@@ -11,25 +11,29 @@
 {% block title %}Content{% endblock %}
 
 {% block body %}
-    <div class="bg-black">
-        {{ super() }}
-        <h1 class="mainHeader"><span class="mainHeaderText">CONTENTS</span></h1>
-        <div class="foodColumn">
+    {{ super() }}
+    <h1 class="mainHeader"><span class="mainHeaderText">CONTENTS</span></h1>
+    <div class="foodColumn">
+        <a href="/bibimbap" class="foodLink">
             <div class="food" id="bibimbap">
                 <h3 class="center foodText">KOREA - BIBIMBAP</h3>
             </div>
+        </a>
+
+        <a href="/bibimbap" class="foodLink">
             <div class="food" id="bibimbap">
                 <h3 class="center foodText">KOREA - BIBIMBAP</h3>
             </div>
+        </a>
+        <a href="/bibimbap" class="foodLink">
             <div class="food" id="bibimbap">
                 <h3 class="center foodText">KOREA - BIBIMBAP</h3>
             </div>
+        </a>
+        <a href="/bibimbap"  class="foodLink">
             <div class="food" id="bibimbap">
                 <h3 class="center foodText">KOREA - BIBIMBAP</h3>
             </div>
-            <div class="food" id="bibimbap">
-                <h3 class="center foodText">KOREA - BIBIMBAP</h3>
-            </div>
-        </div>
+        </a>
     </div>
 {% endblock %}

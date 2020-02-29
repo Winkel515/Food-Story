@@ -1,0 +1,41 @@
+.mainImage {
+    height: 85vh;
+}
+
+.mainImage:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 85vh;
+    background-image: url("https://cdn.mos.cms.futurecdn.net/K9wthLyPD947e9eHVKkYXP.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 50%;
+    background-position-x: 50%;
+    opacity: 0.5;
+    z-index: -2;
+}
+
+.mainImage h1 {
+    position: relative;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.description {
+    margin: 50px 200px;
+    font-size: 18px;
+}
+
+.grid {
+    display: grid;
+}
+
+@media (max-width: 1000px) {
+    .description {
+        margin: 50px 50px;
+    }
+}
