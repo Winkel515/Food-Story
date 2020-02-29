@@ -1,0 +1,22 @@
+{% extends "utils/food.html" %}
+
+{% block title %}Pho{% endblock %}
+
+{% block foodName %}PHO{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/food/pho.css') }}"
+    />
+{% endblock %}
+
+{% block description %}{{ super() }}{% endblock %}
+
+{% block foodImages %}
+    <img class="item1 fit" src="https://images.unsplash.com/photo-1558722141-dd4ef8149bf0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80 ">
+    <img class="item2 fit" src="https://iamafoodblog.com/wp-content/uploads/2014/11/turkey-pho-recipe-4-2.jpg "/>
+    <img class="item3 fit" src="https://images.unsplash.com/photo-1552750866-bf6c618921eb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=333&q=80 " />
+    <img class="item4 fit" src="https://www.sbs.com.au/food/sites/sbs.com.au.food/files/styles/full/public/pho.jpg?itok=pRJLFlGd "/>
+{% endblock %}
