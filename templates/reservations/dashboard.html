@@ -1,0 +1,39 @@
+{% extends 'utils/navbar.html' %}
+
+{% block title %}Reservations{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/dashboard.css') }}"
+    />
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+    <div class="container">
+      <h1>RESERVATIONS</h1>
+        <div class="center-container">
+            <a href="/reserve" class="btn btn-primary">MAKE A RESERVATION</a>
+        </div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>TYPE OF FOOD</th>
+            <th>NUMBER OF GUESTS</th>
+            <th>DATE OF VISIT</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for reservation in list %}
+                <tr>
+                    <td>{{ reservation['food'] }}</td>
+                    <td>{{ reservation['guests'] }}</td>
+                    <td>{{ reservation['date'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+    </div>
+{% endblock %}

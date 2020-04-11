@@ -1,6 +1,6 @@
-from flask import Flask, render_template, redirect, url_for, request, session
-from wtforms.fields.html5 import EmailField
-from wtforms.fields import PasswordField, SubmitField
+from flask import Flask, render_template, redirect, url_for, session
+from wtforms.fields.html5 import EmailField, DateField, IntegerField
+from wtforms.fields import PasswordField, SubmitField, SelectField
 from wtforms.validators import InputRequired, Email, EqualTo, Length, ValidationError
 from flask_wtf import FlaskForm
 from pymongo import MongoClient
@@ -38,6 +38,12 @@ class LoginForm(FlaskForm):
     email = EmailField('Email', validators=[Email(), InputRequired(), incorrect_credentials])
     password = PasswordField('Password')
     submit = SubmitField('Login')
+
+class ReservationForm(FlaskForm):
+    food = SelectField('Select your type of food', choices=[('Korea', 'Korea'), ('Vietnam', 'Vietnam'), ('Middle East', 'Middle East'), ('Japan', 'Japan')])
+    date = DateField('Select the date of your visit')
+    guests = IntegerField('Enter the number of guests', validators=[InputRequired()])
+    submit = SubmitField('Reserve')
 
 @app.route('/')
 def mainpage():
@@ -79,7 +85,7 @@ def register():
         }
         usersCollection.insert_one(account)
         session['email'] = form.email.data.strip()
-        return "Welcome " + session.get('email')
+        return redirect(url_for('reservations'))
     return render_template('auth/register.html', form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -95,9 +101,28 @@ def signout():
     session.pop('email')
     return redirect(url_for('mainpage'))
 
-@app.route('/random')
-def random():
-    return session.get('email', 'No email')
+@app.route('/reservations')
+def reservations():
+    if session.get('email') == None:
+        return redirect(url_for('mainpage'))
+    reservationList = reservationsCollection.find({'email': session['email']})
+    return render_template('reservations/dashboard.html', list=reservationList)
+
+@app.route('/reserve', methods=['GET', 'POST'])
+def reserve():
+    form = ReservationForm()
+    if session.get('email') == None:
+        return redirect(url_for('mainpage'))
+    if form.validate_on_submit():
+        reservation = {
+            "email": session['email'],
+            "food": form.food.data,
+            "date": form.date.data.strftime("%d %b %Y"),
+            "guests": form.guests.data
+        }
+        reservationsCollection.insert_one(reservation)
+        return redirect(url_for('reservations'))
+    return render_template('reservations/reserve.html', form=form)
 
 if __name__ == '__main__':
     app.run()

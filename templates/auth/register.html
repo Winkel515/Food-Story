@@ -12,7 +12,7 @@
 
 {% block body %}
     {{ super() }}
-    <form class="mainForm" action="/register", method="POST">
+    <form class="mainForm container-sm" action="/register", method="POST">
         <h1 class="mainText">REGISTER</h1>
         {{ form.csrf_token }}
         <div class="form-group">
