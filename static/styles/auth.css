@@ -1,0 +1,17 @@
+.mainText {
+    text-align: center;
+}
+
+.mainForm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+}
+
+.button-center {
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}

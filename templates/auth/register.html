@@ -1,0 +1,46 @@
+{% extends 'utils/navbar.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block head %}
+    {{ super() }}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/auth.css') }}"
+    />
+{% endblock %}
+
+{% block body %}
+    {{ super() }}
+    <form class="mainForm" action="/register", method="POST">
+        <h1 class="mainText">REGISTER</h1>
+        {{ form.csrf_token }}
+        <div class="form-group">
+            {{ form.email.label }}
+            {{ form.email(class_="form-control") }}
+            {% if form.email.errors %}
+                <ul class="errors">
+                    {% for error in form.email.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.password.label }}
+            {{ form.password(class_="form-control") }}
+            {% if form.password.errors %}
+                <ul class="errors">
+                    {% for error in form.password.errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+        <div class="form-group">
+            {{ form.confirm.label }}
+            {{ form.confirm(class_="form-control") }}
+        </div>
+        {{ form.submit(class_='btn btn-primary button-center') }}
+    </form>
+{% endblock %}

@@ -24,6 +24,18 @@
                 <li class="nav-item ml-auto">
                     <a href="/surprise" class="nav-link">SURPRISE</a>
                 </li>
+                {% if session['email'] %}
+                    <li class="nav-item ml-auto">
+                        <a href="/reservations" class="nav-link">RESERVATIONS</a>
+                    </li>
+                {% endif %}
+                <li class="nav-item ml-auto">
+                    {% if session['email'] %}
+                        <a href="/signout" class="nav-link">SIGN OUT</a>
+                    {% else %}
+                        <a href="/login" class="nav-link">LOGIN</a>
+                    {% endif %}
+                </li>
             </ul>
         </div>
     </nav>
